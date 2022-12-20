@@ -72,9 +72,8 @@ function animate() {
 }
 
 
-canvas.addEventListener("click", function(event) {
-    mouse.x = event.x;
-    mouse.y = event.y;
+canvas.addEventListener("click", function() {
+    
     portfolio.style.visibility = "visible";
     slider.style.visibility = "visible";
 
