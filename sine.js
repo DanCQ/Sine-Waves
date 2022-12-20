@@ -1,5 +1,6 @@
 const canvas = document.getElementById("canvas");
 const portfolio = document.querySelector(".portfolio");
+const slider = document.querySelector(".slider");
 
 let screenHeight = window.innerHeight;
 let screenWidth = window.innerWidth;
@@ -7,13 +8,16 @@ canvas.height = screenHeight;
 canvas.width = screenWidth;
 c = canvas.getContext("2d");
 
+const sliderColor = document.getElementById("color");
+const colorRange = document.getElementById("color-range");
+const sliderSat = document.getElementById("saturation");
+const satRange = document.getElementById("saturation-range");
+const sliderLight = document.getElementById("lightness");
+const lightRange = document.getElementById("light-range");
+
 let allow = true;
 let off;
 let time = 0;
-let mouse = { //mouse location
-    x: screenWidth / 2,
-    y: screenHeight / 2
-};
 
 
 //Returns a random number within a chosen range
@@ -33,9 +37,9 @@ let wave = {
 
 let increment = wave.frequency;
 let color = {
-    h: 255,
-    l: 50,
-    s: 100
+    h: sliderColor.value,
+    l: sliderLight,
+    s: sliderSat.value
 }
 
 function animate() {
@@ -53,15 +57,18 @@ function animate() {
     c.strokeStyle = `hsl(${color.h * Math.sin(increment)}, ${color.s}%, ${color.l}%)`;
     c.stroke();
     c.closePath();
-
-    increment += wave.frequency;
     
-    console.log(
-        "length:" + wave.length,
-        "amplitude" + wave.amplitude,
-        "frequency" + wave.frequency
-    );
-
+    
+    increment += wave.frequency;
+    wave.y = screenHeight / 2,
+    
+    color.h = sliderColor.value;
+    colorRange.innerHTML = sliderColor.value;
+    color.l = sliderLight.value;
+    lightRange.innerHTML = sliderLight.value;
+    color.s = sliderSat.value;
+    satRange.innerHTML = sliderSat.value;
+    
 }
 
 
@@ -69,6 +76,7 @@ canvas.addEventListener("click", function(event) {
     mouse.x = event.x;
     mouse.y = event.y;
     portfolio.style.visibility = "visible";
+    slider.style.visibility = "visible";
 
     time = 10000; //10 seconds, resets on click
     
@@ -81,6 +89,7 @@ canvas.addEventListener("click", function(event) {
         
             if(time <= 0) {
                 portfolio.style.visibility = "hidden";
+                slider.style.visibility = "hidden";
                 clearInterval(off);
                 allow = true;
             }
