@@ -49,10 +49,10 @@ function animate() {
 
     requestAnimationFrame(animate);
 
-    c.fillStyle = `rgba(0, 0, 0, 0.02)`;
+    c.fillStyle = `rgba(0, 0, 0, 0.03)`;
     c.fillRect(0,0,screenWidth,screenHeight);
     
-    //object
+    //wave object
     c.beginPath();
     c.moveTo(0, screenHeight / 2);
     for(i = 0; i < screenWidth; i++) {
