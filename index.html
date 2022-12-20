@@ -10,6 +10,12 @@
         <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
         <link rel="manifest" href="favicon_io/site.webmanifest">
 
+         <!-- Google fonts -->
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Antonio&family=Audiowide&family=Jura&display=swap" >
+ 
+
         <link rel="stylesheet" type="text/css" href="sine.css" />
 
         <title>Sine Waves</title>
@@ -18,6 +24,33 @@
     <body>
 
         <canvas id="canvas"></canvas>
+
+        <div class="slider">
+
+            <div class="colors">
+                <h3>Colors</h3> 
+                <label>
+                    Color
+                    <input type="range" min="0" max="255" value="255" id="color" />
+                    <span id="color-range"></span>
+                </label>
+                
+                <label>
+                    Lightness
+                    <input type="range" min="0" max="100" value="50" id="lightness" />
+                    <span id="light-range"></span>
+                </label>
+
+                <label>
+                    Saturation
+                    <input type="range" min="0" max="100" value="100" id="saturation" />
+                    <span id="saturation-range"></span>
+                </label>
+
+               
+            </div>
+
+        </div>
 
         <div class="portfolio">
             <a href="https://dany-cervantes-portfolio.pages.dev/" target="_blank">
