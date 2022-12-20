@@ -26,3 +26,26 @@ canvas {
     opacity:0.3;
     text-decoration: none;
 }
+
+.colors { 
+    display: flex;
+        flex-direction: column;
+    position: absolute;
+        top:0;
+        left:2.5%;
+}
+
+label {
+    text-align: end;
+}
+
+.slider {
+    color: ivory;
+    font-family: "jura", "antonio", "audiowide";
+    visibility:hidden;
+}
+
+.colors h3 {
+    font-family: "audiowide";
+    text-align: center;
+}
