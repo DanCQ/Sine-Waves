@@ -52,6 +52,8 @@ function animate() {
     c.fillStyle = `rgba(0, 0, 0, 0.03)`;
     c.fillRect(0,0,screenWidth,screenHeight);
     
+    wave.y = screenHeight / 2,
+    
     //wave object
     c.beginPath();
     c.moveTo(0, screenHeight / 2);
@@ -64,7 +66,6 @@ function animate() {
     
 
     increment += wave.frequency;
-    wave.y = screenHeight / 2,
     
     //update color values
     color.h = sliderColor.value;
@@ -144,7 +145,7 @@ setTimeout(function() {
             screenWidth = window.innerWidth;
             canvas.height = screenHeight;
             canvas.width = screenWidth;
-        },100);
+        },25);
     });
 }, 25); 
 
