@@ -90,7 +90,7 @@ canvas.addEventListener("click", function() {
     portfolio.style.visibility = "visible";
     slider.style.visibility = "visible";
 
-    time = 20000; //10 seconds, resets on click
+    time = 20000; //20 seconds, resets on click
     
     if(allow) {
 
